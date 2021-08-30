@@ -37,10 +37,12 @@ All languages and countries follow a two-character code system (eg.  Ukraine and
 ## Installation Guide
 1. First things first: you need to install 'newsoverview'.
 ```
-install newsoverview  # in PyCharm you can right click on this to install
+pip install newsoverview  
 C:> py -m pip install newsoverview  # windows command/terminal
 $ python -m pip install newsoverview  # mac and linux
 ```
+[PyPi](https://pypi.org/project/newsoverview/)
+
 
 2. Import the program and its classes: 
 ```python
@@ -48,12 +50,14 @@ import newsoverview
 from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews, SimpleSearch
 ```
 
-3. Fix `pygooglenews`:
+3. Fix `feedparser.py`:
 
-**You only need to do this step if you've run step 4, and you get an error relating to `feedparser.py`**
+**You only need to do this step if you've run step 4, and you get an error relating to `feedparser.py`. This error links to all modules called with this function, and when it's been fixed it will go away**
 
 
-There is one line of code that needs editing for `pygooglenews` to work properly. This error is in the module `feedparser.py`. There are two ways to fix this problem; you can either:
+There is one line of code that needs editing for `newsoverview` to work properly through `pygooglenews`. **This error is in the module `feedparser.py`.**
+
+There are two ways to fix this problem; you can either:
 
   * Run the program and use the error to navigate to `feedparser.py` 
     * OR
@@ -67,7 +71,7 @@ Once you are in the `feedparser.py` module, navigate to line 93 and replace:
 
 `_base64decode = getattr(base64, 'decodebytes', base64.decodestring)` **with** `base64.decodebytes` 
 
-Congrats! You just fixed `pygooglenews`
+Congrats! You just fixed `pygooglenews`,
 
 4. Give it a go!
 

@@ -4,7 +4,7 @@ News at a glance.
 This is my first program and it might be a bit messy but I hope to improve it as my skills develop! If you'd like anything added/edited or would like to add/edit something yourself, just let me know.
 
 ## About
-This package is perfect for when you need to have an overview of what's going on in the world.
+This module is perfect for when you need to have an overview of what's going on in the world.
 
 It's a simple bit of code which uses a news scraper to search Google News, and provides the titles, dates, links and if necessary, a translation of the title at the bottom. 
 The news searches are sorted into different categories, also referred to as classes. These classes include:
@@ -19,18 +19,19 @@ All languages and countries follow a two-character code system (eg. Ukraine and 
 
 #
 ## Contents: 
-### newsoverview
-### About
-### Installation Guide
-### Usage
-### Further Usage
-#### * EnglishWorldNews
-#### * TranslatedWorldNews
-#### * CoronavirusNews
-#### * TravelWarnings
-#### * Protests
-#### * TerrorNews
-### License
+### [newsoverview](https://github.com/bethcha/newsoverview#newsoverview)
+### [About](https://github.com/bethcha/newsoverview#about)
+### [Installation Guide](https://github.com/bethcha/newsoverview#installation-guide-1)
+### [Usage](https://github.com/bethcha/newsoverview#usage-1)
+### [Usage (advanced)](https://github.com/bethcha/newsoverview#usage-advanced)
+#### * [EnglishWorldNews](https://github.com/bethcha/newsoverview#englishworldnews-class)
+#### * [TranslatedWorldNews](https://github.com/bethcha/newsoverview#translatedworldnews-class)
+#### * [SimpleSearch](https://github.com/bethcha/newsoverview#simplesearch-class)
+#### * [CoronavirusNews](https://github.com/bethcha/newsoverview#coronavirusnews-class)
+#### * [TravelWarnings](https://github.com/bethcha/newsoverview#travelwarnings-class)
+#### * [Protests](https://github.com/bethcha/newsoverview#protests-class)
+#### * [TerrorNews](https://github.com/bethcha/newsoverview#terrornews-class)
+### [License](https://github.com/bethcha/newsoverview#license-1)
 
 #
 ## Installation Guide
@@ -44,7 +45,7 @@ $ python -m pip install newsoverview  # mac and linux
 2. Import the program and its classes: 
 ```python
 import newsoverview
-from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews 
+from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews, SimpleSearch
 ```
 
 3. Fix `pygooglenews`:
@@ -76,13 +77,18 @@ Lets find the top news stories happening in the UK:
 news = EnglishWorldNews()  # assigning the EnglishWorldNews class to the variable 'news'
 news.uk()  # calling the function 'uk()' from the EnglishWorldNews class 
 ```
+Or, let's find the most recent news about the paralympics:
+```python
+my_search = SimpleSearch()
+paralympics = my_search.en_search(query='paralympics')
+```
 
 #
 ## Usage 
-Installing the package:
+Installing the module:
 ```python
 pip install newsoverview
-from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews 
+from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews, SimpleSearch 
 ```
 * Finding top news in Asia (english) (**quick start**):
 ```python
@@ -139,6 +145,21 @@ tr_news.africa_tr()  # Morocco, Senegal and Egypt
 tr_news.mena_tr()  # Egypt, Lebanon, Morocco, Saudi Arabia, United Arab Emirates & Israel
 ```
 
+* Using **your own query** to search for news:
+All results will be searched for in the **past 24 hours**.  
+
+For the translated search, you need to import GoogleNews. This is because GoogleNews is a parameter that can to be altered with each query, so you can pass specific country/langugage combinations to refine your news to that country/language. 
+
+*However,* if you are unsure of a country/language combination, **use `country='GB'` or `country='US'`** as almost all languages can be searched from these countries.
+
+More information is provided below in SimpleSearch Class.
+```python
+from pygooglenews import GoogleNews  # if you're using the translated search, you need to import GoogleNews to make a country-language combination.
+my_search = SimpleSearch()
+my_search.en_search(query='football')  # english search of the query 'football'
+my_search.tr_search(gn=GoogleNews(lang='hi', country='IN'), query='फ़ुटबॉल')  # gives a translated search of the query 'football' in hindi (hi), as if you're searching in India (IN)
+```
+
 #
 ## Usage (advanced)
 
@@ -175,6 +196,13 @@ To call news from individual countries, follow the format `tr_news.country()`, e
 
 Be aware that some countries may have a suffix where they speak more than one language recognised by Google News, eg for Belgium. 
 You can call `tr_news.belgium_fr()` for Belgian headlines in french, or `tr_news.belgium_nl()` for Belgian headlines in dutch. 
+
+### SimpleSearch Class
+You can find the correct country/language combinations by going to Google News, and scrolling down to the bottom to 'Language & Region' to see which combinations are supported.
+
+All country codes and language codes are provided in the countries_and_lang.txt file
+The `en_search` default is using GoogleNews in the UK (country='GB'). The code for this is `gn=GoogleNews(lang='en', country='GB')`
+
 
 ### CoronavirusNews Class
 Show a list of all *languages* listed in the `CoronavirusNews` Class:

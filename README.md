@@ -12,7 +12,7 @@ The news searches are sorted into different categories, also referred to as clas
 
 Certain countries and languages are not currently present in this program; as EnglishWorldNews and TranslatedWorldNews use specific country-language combinations found in GoogleNews to search for geo-specific headlines. However, if you would like a country-language combination added to these classes, let me know.
 
-All languages and countries follow a two-character code system (eg.  Ukraine and Russian = UK and ru). There is an attached file named countries_and_lang.txt with all countries and languages in this format. This is because Google News uses these labelling conventions. 
+All languages and countries follow a two-character code system (e.g. Ukraine and Russian = UK and ru). There is an attached file named `countries_and_lang.txt` with all countries and languages in this format. This is because Google News uses these labelling conventions. 
 
 
 #### Please note that titles in languages other than English are translated, which means that these functions take slightly longer to run. 
@@ -32,6 +32,7 @@ All languages and countries follow a two-character code system (eg.  Ukraine and
 #### * [Protests](https://github.com/bethcha/newsoverview#protests-class)
 #### * [TerrorNews](https://github.com/bethcha/newsoverview#terrornews-class)
 ### [License](https://github.com/bethcha/newsoverview#license-1)
+### [Links](https://github.com/bethcha/newsoverview#links)
 
 #
 ## Installation Guide
@@ -41,7 +42,7 @@ pip install newsoverview
 C:> py -m pip install newsoverview  # windows command/terminal
 $ python -m pip install newsoverview  # mac and linux
 ```
-[PyPi](https://pypi.org/project/newsoverview/)
+[PyPi](https://pypi.org/project/newsoverview/), [GitHub](https://github.com/bethcha/newsoverview)
 
 
 2. Import the program and its classes: 
@@ -145,7 +146,7 @@ tr_news.america_s_tr()  # includes Mexico, Peru, Brazil, Argentina, Chile, etc
 tr_news.asia_tr()  # includes China, India, Lebanon, Vietnam, Indonesia, Israel, etc
 tr_news.africa_tr()  # Morocco, Senegal and Egypt
 
-# Includes specific MENA region function if needed:
+# Includes specific MENA (Middle East and North Africa) region function if needed:
 tr_news.mena_tr()  # Egypt, Lebanon, Morocco, Saudi Arabia, United Arab Emirates & Israel
 ```
 
@@ -173,7 +174,7 @@ Show a list of all *countries* listed in the `EnglishWorldNews` Class:
 en_news = EnglishWorldNews()
 en_country_list = en_news.en_list()
 ```
-To call news from individual countries, follow the format `en_news.country()`, eg.  for Tanzanian headlines, call  en_news.tanzania()`. All countries will follow this format.
+To call news from individual countries, follow the format `en_news.country()`, e.g.  for Tanzanian headlines, call  en_news.tanzania()`. All countries will follow this format.
 
 You can create your own custom `en_news` function, for example:
 ```python
@@ -196,15 +197,15 @@ Show a list of all *countries* listed in the `TranslatedWorldNews` Class:
 tr_news = TranslatedWorldNews()
 tr_country_list = tr_news.tr_list()
 ```
-To call news from individual countries, follow the format `tr_news.country()`, eg.  for Slovakian headlines, call `tr_news.slovakia()`. All countries will follow this format. 
+To call news from individual countries, follow the format `tr_news.country()`, e.g.  for Slovakian headlines, call `tr_news.slovakia()`. All countries will follow this format. 
 
-Be aware that some countries may have a suffix where they speak more than one language recognised by Google News, eg.  for Belgium. 
+Be aware that some countries may have a suffix where they speak more than one language recognised by Google News, e.g.  for Belgium. 
 You can call `tr_news.belgium_fr()` for Belgian headlines in French, or `tr_news.belgium_nl()` for Belgian headlines in Dutch. 
 
 ### SimpleSearch Class
 You can find the correct country/language combinations by going to Google News, and scrolling down to the bottom to 'Language & Region' to see which combinations are supported.
 
-All country codes and language codes are provided in the countries_and_lang.txt file
+All country codes and language codes are provided in the `countries_and_lang.txt` file
 The `en_search` default is using GoogleNews in the UK (country='GB'). The code for this is `gn=GoogleNews(lang='en', country='GB')`
 
 
@@ -214,7 +215,7 @@ Show a list of all *languages* listed in the `CoronavirusNews` Class:
 covid = CoronavirusNews()
 covid_lang_list = covid.covid_list()
 ```
-To call news from individual languages, follow the format `covid.language_covid()`, eg.  for Arabic headlines, call `covid.ar_covid()`. All languages will follow this format.
+To call news from individual languages, follow the format `covid.language_covid()`, e.g.  for Arabic headlines, call `covid.ar_covid()`. All languages will follow this format.
 
 ### TravelWarnings Class
 Show a list of all *languages* listed in the `TravelWarnings` Class:
@@ -224,9 +225,9 @@ aero_lang_list = travel.lang_aeroplanes()  # for aeroplane and flight-related ne
 travel_lang_list = travel.lang_travel_restrictions()  # for travel restrictions and border closure-related news
 # they both use the same languages
 ```
-To call news for an individual language in the aeroplane category, follow the format `travel.language_aeroplanes()`, eg. for Russian headlines, call `travel.ru_aeroplanes()`. 
+To call news for an individual language in the aeroplane category, follow the format `travel.language_aeroplanes()`, e.g. for Russian headlines, call `travel.ru_aeroplanes()`. 
 
-To call news for an individual language in the travel_restrictions category, follow the format `travel.language_travel_restrictions()`, eg.  for Portuguese headlines, call `travel.pt_travel_restrictions()` All languages will follow this format.
+To call news for an individual language in the travel_restrictions category, follow the format `travel.language_travel_restrictions()`, e.g.  for Portuguese headlines, call `travel.pt_travel_restrictions()` All languages will follow this format.
 
 Furthermore, you can call both `aeroplanes` and `travel_restrictions` together for a particular language using `travel.call_language()`. If you wanted the French travel news, you can simply use `travel.call_fr()`. 
 
@@ -236,7 +237,7 @@ Show a list of all *languages* listed in the `Protests` Class:
 protests = Protests()
 protests_lang_list = protests.lang_protests()
 ```
-To call news from individual languages, follow the format `protests.language_protests()`, eg for German headlines, call `protests.de_protests()`. All languages will follow this format.
+To call news from individual languages, follow the format `protests.language_protests()`, e.g. for German headlines, call `protests.de_protests()`. All languages will follow this format.
 
 ### TerrorNews Class
 Show a list of the functions used in the `TerrorNews` Class:
@@ -252,3 +253,6 @@ To call all three of these functions, simply use `terror.terror_news()` and it w
 #
 ## License
 This project is licensed under the terms of the MIT License
+
+### Links
+[Github](https://github.com/bethcha/newsoverview), [PyPi](https://pypi.org/project/newsoverview/)

@@ -4,7 +4,7 @@ setup(
     name='newsoverview',
     version='0.1',
     packages=['newsoverview'],
-    url='',
+    url='https://github.com/bethcha/newsoverview',
     license='MIT',
     author='Bethan',
     author_email='89695634+bethcha@users.noreply.github.com',

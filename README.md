@@ -49,6 +49,9 @@ from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarn
 
 3. Fix `pygooglenews`:
 
+**You only need to do this step if you've run step 4 and you get an error relating to `feedparser.py`**
+
+
 There is one line of code that needs editing for `pygooglenews` to work properly. This error is in the module `feedparser.py`. There are two ways to fix this problem; you can either:
 
   * Run the program and use the error to navigate to `feedparser.py` 
@@ -81,10 +84,12 @@ Installing the package:
 pip install newsoverview
 from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews 
 ```
-* Finding UK top news:
+* Finding top news in Asia (english) (**quick start**):
 ```python
-uk_news = EnglishWorldNews().uk()
+asia_news = EnglishWorldNews().asia()
 ```
+
+### Main Functions used:
 
 * Finding all **protest** news released in the past 12 hours:
 ```python

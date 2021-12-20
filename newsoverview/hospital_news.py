@@ -82,17 +82,17 @@ class HospitalNews:
     def call_hospitals(self):
         print("\nHospital-related incidences reported in the past 12 hours:")
         self.en_hospitals()
-        print("\nFrench Hospital-related incidences reported in the past 12 hours:")
+        print("\nFrench hospital-related incidences reported in the past 12 hours:")
         self.fr_hospitals()
-        print("\nGerman Hospital-related incidences reported in the past 12 hours:")
+        print("\nGerman hospital-related incidences reported in the past 12 hours:")
         self.de_hospitals()
-        print("\nSpanish Hospital-related incidences reported in the past 12 hours:")
+        print("\nSpanish hospital-related incidences reported in the past 12 hours:")
         self.es_hospitals()
-        print("\nPortuguese Hospital-related incidences reported in the past 12 hours:")
+        print("\nPortuguese hospital-related incidences reported in the past 12 hours:")
         self.pt_hospitals()
-        print("\nRussian Hospital-related incidences reported in the past 12 hours:")
+        print("\nRussian hospital-related incidences reported in the past 12 hours:")
         self.ru_hospitals()
-        print("\nArabic Hospital-related incidences reported in the past 12 hours:")
+        print("\nArabic hospital-related incidences reported in the past 12 hours:")
         self.ar_hospitals()
 
     def lang_hospitals(self):

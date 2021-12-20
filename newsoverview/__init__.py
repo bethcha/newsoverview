@@ -1,3 +1,4 @@
+# to init
 from .covid_news import CoronavirusNews
 from .en_world_news import EnglishWorldNews
 from .protests import Protests

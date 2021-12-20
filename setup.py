@@ -5,7 +5,7 @@ with open("README.md", 'r') as f:
 
 setup(
     name='newsoverview',
-    version='0.1',
+    version='0.2',
     packages=['newsoverview'],
     url='https://github.com/bethcha/newsoverview',
     license='MIT',

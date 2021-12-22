@@ -31,6 +31,8 @@ All languages and countries follow a two-character code system (e.g. Ukraine and
 #### * [TravelWarnings](https://github.com/bethcha/newsoverview#travelwarnings-class)
 #### * [Protests](https://github.com/bethcha/newsoverview#protests-class)
 #### * [TerrorNews](https://github.com/bethcha/newsoverview#terrornews-class)
+#### * [HospitalNews](https://github.com/bethcha/newsoverview#hospitalnews-class)
+#### * [KWSearch](https://github.com/bethcha/newsoverview#kwsearch-class)
 ### [License](https://github.com/bethcha/newsoverview#license-1)
 ### [Links](https://github.com/bethcha/newsoverview#links)
 
@@ -42,13 +44,13 @@ pip install newsoverview
 C:> py -m pip install newsoverview  # windows command/terminal
 $ python -m pip install newsoverview  # mac and linux
 ```
-[PyPi](https://pypi.org/project/newsoverview/), [GitHub](https://github.com/bethcha/newsoverview)
+[PyPi](https://pypi.org/project/newsoverview/), [GitHub](https://github.com/bethcha/newsoverview), [Colab](https://colab.research.google.com/drive/12_2TFrRHNydzZ0qFwwG1fcluAhBZvDii?usp=sharing)
 
 
 2. Import the program and its classes: 
 ```python
 import newsoverview
-from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews, SimpleSearch
+from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews, SimpleSearch, HospitalNews, KWSearch 
 ```
 
 3. Fix `feedparser.py`:
@@ -93,7 +95,7 @@ paralympics = my_search.en_search(query='paralympics')
 Installing the module:
 ```python
 pip install newsoverview
-from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews, SimpleSearch 
+from newsoverview import CoronavirusNews, EnglishWorldNews, Protests, TravelWarnings, TerrorNews, TranslatedWorldNews, SimpleSearch, HospitalNews, KWSearch 
 ```
 * Finding top news in Asia (English) (**quick start**):
 ```python
@@ -125,6 +127,11 @@ covid.lockdown()  # lockdown-related news
 * Finding all **terror**-related news reported in the last 12 hours:
 ```python
 terror = TerrorNews().terror_search()
+```
+
+* Finding all **incident**-related news reported in the last 10 hours:
+```python
+incidents = KWSearch().incidents_reports()
 ```
 
 * Finding **geo-specific headlines** reported in *English*-speaking countries by continent:
@@ -249,10 +256,22 @@ This class only searches in English, and searches for keywords, groups, and terr
 
 To call all three of these functions, simply use `terror.terror_news()` and it will output terror-related news articles published in the past 12 hours. 
 
+### HospitalNews Class
+Calling the function to see if any hospital-related news has been reported in the past 12 hours, and see which languages are included in the search:
+```python
+hospital_news = HospitalNews().call_hospitals()
+hospital_langs = HospitalNews().lang_hospitals()
+```
 
+### KWSearch Class
+Keywords for incident, raid, hostage, and clash-related news; only in English:
+```python
+incidents = KWSearch().incidents_reports()
+```
+includes `incidents()`, `raids()`, `hostages()`, and `clashes()` within the `KWSearch()` class.
 #
 ## License
 This project is licensed under the terms of the MIT License
 
 ### Links
-[Github](https://github.com/bethcha/newsoverview), [PyPi](https://pypi.org/project/newsoverview/)
+[Github](https://github.com/bethcha/newsoverview), [PyPi](https://pypi.org/project/newsoverview/), [Colab](https://colab.research.google.com/drive/12_2TFrRHNydzZ0qFwwG1fcluAhBZvDii?usp=sharing)

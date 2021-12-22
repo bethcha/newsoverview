@@ -7,3 +7,4 @@ from .terror_monitor import TerrorNews
 from .tr_world_news import TranslatedWorldNews
 from .simple_search import SimpleSearch
 from .hospital_news import HospitalNews
+from .keywords_en import KWSearch
